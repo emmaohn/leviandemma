@@ -1,0 +1,75 @@
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&family=Mrs+Saint+Delafield&display=swap');
+@font-face {
+  font-family: 'singlong';
+  src: url('singlong.ttf') format('truetype');
+}
+
+@mixin break($custom) {
+  @media (min-width: $custom) { @content; }
+}
+
+:root {
+  --light-text: #ffffff;
+  --light-background: #ffffff;
+  --dark-text: #2770a5;
+  --dark-background: #8B4513;
+  --accent: #2770a5;
+  --sm: 640px;
+  --md: 768px;
+  --lg: 1024px;
+  --xl: 1280px;
+  --2xl: 1536px;
+}
+
+html {
+  font-size: 16px;
+  color: var(--dark-text);
+  @include break(768px) {
+    font-size: 18px;
+  }
+}
+
+body {
+  background-color: var(--light-background);
+}
+main, header, footer {
+  margin: 0 1.4em;
+  @include break(768px) {
+    margin: 0 2.6em;
+  }
+  @include break(1024px) {
+    margin: 0 5em;
+  }
+  @include break(1280px) {
+    margin: 0 10em;
+  }
+}
+
+body, p, a {
+  font-family: 'Livvic', Georgia, 'Times New Roman', Times, serif;
+  font-weight: 400;
+}
+
+h1, h2 {
+  font-family: 'singlong', Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 2.8em;
+  margin-bottom: -.1em;
+}
+h3, h4, h5, h6 {
+  font-family: 'Livvic', Georgia, 'Times New Roman', Times, serif;
+}
+h3, h4, h5, h6 {
+  font-weight: 500;
+}
+h3, h4 {
+  font-family: 'Livvic', Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.4em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

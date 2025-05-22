@@ -1,0 +1,22 @@
+nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+nav ul li {
+  list-style: none;
+}
+nav ul li a {
+  color: var(--dark-text);
+  text-decoration: none;
+}
+
+.center {
+  text-align: center;
+  margin: 0 auto;
+}
+
+h1 {
+  margin-top: 0.6em;
+}
+
+/*# sourceMappingURL=styles.css.map */
