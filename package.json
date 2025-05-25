@@ -4,8 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "sass --watch styles/styles.scss:styles/css/styles.css",
-    "theme": "sass styles/theme.scss:styles/css/theme.css"
+    "watch": "sass --watch styles/scss:styles/css"
   },
   "repository": {
     "type": "git",
