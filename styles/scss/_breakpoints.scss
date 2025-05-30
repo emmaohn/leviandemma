@@ -1,0 +1,7 @@
+$lg: 1025px;
+$md: 700px;
+$sm: 500px;
+
+@mixin break($custom) {
+    @media (min-width: $custom) { @content; }
+}

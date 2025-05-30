@@ -61,24 +61,11 @@ select {
   font-family: "singlong";
   src: url("Singlong.ttf") format("truetype");
 }
-:root {
-  --light-text: #ffffff;
-  --light-background: #ffffff;
-  --dark-text: #2770a5;
-  --dark-background: #8B4513;
-  --accent: #2770a5;
-  --sm: 640px;
-  --md: 768px;
-  --lg: 1024px;
-  --xl: 1280px;
-  --2xl: 1536px;
-}
-
 html {
   font-size: 16px;
-  color: var(--dark-text);
+  color: #2770a5;
 }
-@media (min-width: 768px) {
+@media (min-width: 700px) {
   html {
     font-size: 18px;
   }
@@ -89,7 +76,7 @@ body {
 }
 
 main, header, footer {
-  margin: 0 1.4em;
+  margin: 0 1em;
 }
 @media (min-width: 768px) {
   main, header, footer {
@@ -114,16 +101,8 @@ body, p, a {
 
 h1, h2 {
   font-family: "singlong", Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 2.8em;
+  font-size: 2.8rem;
   margin-bottom: -0.1em;
-}
-
-h3, h4, h5, h6 {
-  font-family: "Livvic", Georgia, "Times New Roman", Times, serif;
-}
-
-h3, h4, h5, h6 {
-  font-weight: 500;
 }
 
 h3, h4 {
@@ -133,30 +112,37 @@ h3, h4 {
   text-transform: uppercase;
 }
 
+h5, h6 {
+  font-family: "Livvic", Georgia, "Times New Roman", Times, serif;
+  font-weight: 500;
+}
+
 img {
   max-width: 100%;
   height: auto;
 }
 
-nav ul {
-  display: flex;
-  justify-content: space-around;
-}
-nav ul li {
-  list-style: none;
-}
-nav ul li a {
-  color: var(--dark-text);
-  text-decoration: none;
-}
-
+/* -------------------------------------------
+                Utility classes
+   ------------------------------------------- */
 .center {
   text-align: center;
   margin: 0 auto;
 }
 
-h1 {
-  margin-top: 0.6em;
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+nav ul li {
+  list-style: none;
+}
+nav ul li a {
+  color: #2770a5;
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=styles.css.map */

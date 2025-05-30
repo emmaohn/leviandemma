@@ -1,24 +1,20 @@
+@use "vars" as v;
+
 nav {
   ul {
     display: flex;
     justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
 
     li {
       list-style: none;
 
       a {
-        color: var(--dark-text);
+        color: v.$dark-text;
         text-decoration: none;
       }
     }
   }
-}
-
-.center {
-  text-align: center;
-  margin: 0 auto;
-}
-
-h1 {
-  margin-top: .6em;
 }
