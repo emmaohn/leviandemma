@@ -1,6 +1,19 @@
 @use "vars" as v;
 @use "breakpoints" as b;
 
+#navigation {
+  display: flex;
+  justify-content: end;
+  @include b.break(b.$sm) {
+    display: inherit;
+  }
+  button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    padding-top: 0;
+  }
+}
+
 nav {
   > button {
     display: block;
@@ -13,6 +26,8 @@ nav {
     color: v.$accent;
     font-size: 1.75em;
     border-radius: 25px;
+    transition: all .3s;
+    
     &:hover {
       background-color: v.$light-blue;
     }
@@ -47,6 +62,7 @@ nav {
         text-decoration: none;
         padding: 1em;
         border-radius: 25px;
+        transition: all .3s;
 
         &:hover {
           text-decoration: underline;
