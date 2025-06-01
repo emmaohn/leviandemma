@@ -1,19 +1,59 @@
 @use "vars" as v;
+@use "breakpoints" as b;
 
 nav {
+  > button {
+    display: block;
+    @include b.break(b.$sm) {
+      display: none;
+    }
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: v.$accent;
+    font-size: 1.75em;
+    border-radius: 25px;
+    &:hover {
+      background-color: v.$light-blue;
+    }
+  }
+
   ul {
     display: flex;
+    &.hideOnMobile {
+      display: none;
+      @include b.break(b.$sm) {
+        display: flex;
+      }
+    }
     justify-content: space-around;
     flex-direction: column;
     align-items: center;
     padding: 0;
+    @include b.break(b.$sm) {
+      flex-direction: row;
+    }
 
     li {
       list-style: none;
+      margin-top: 1.5em;
+      margin-bottom: 1.5em;
+      @include b.break(b.$sm) {
+        margin-top: 1em;
+      }
 
       a {
         color: v.$dark-text;
         text-decoration: none;
+        padding: 1em;
+        border-radius: 25px;
+
+        &:hover {
+          text-decoration: underline;
+        }
+        &.active {
+          background-color: v.$light-blue;
+        }
       }
     }
   }
