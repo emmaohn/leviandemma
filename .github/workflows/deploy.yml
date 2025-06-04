@@ -1,82 +1,39 @@
 on:
-  push: # Trigger the workflow when code is pushed
+  push:
     branches:
-      - master # Only trigger on pushes to the 'main' branch
+      - master
 
-jobs: 
-  build:
-    runs-on: ubuntu-latest # Use Ubuntu for the runner environment
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    # Add permissions for GitHub Pages deployment
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    
     steps:
       - name: Checkout source Git branch
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4  # Updated to latest version
         with:
-            ref: master
-            fetch-depth: 10
-
-      - name: Make destination directory for compiled CSS
-        run: mkdir -vp /tmp/leviandemma/styles/css
-
+          ref: master
+          fetch-depth: 0
+      
       - name: Compile SCSS
         uses: gha-utilities/sass-build@v0.4.7
         with:
           source: styles/scss/styles.scss
-          destination: /tmp/leviandemma/styles/css/styles.css
-
-# on:
-#   push:
-#     branches:
-#       - master
-
-# jobs:
-#   build_css:
-#     runs-on: ubuntu-latest
-
-#     steps:
-#       - name: Checkout source Git branch
-#         uses: actions/checkout@v2
-#         with:
-#             ref: master
-#             fetch-depth: 10
-#             submodules: true
-
-#       - name: Make destination directory for compiled CSS
-#         run: mkdir -vp /tmp/leviandemma/assets/css
-
-#       - name: Compile CSS from SCSS files
-#         uses: gha-utilities/sass-build@v0.6.1
-#         with:
-#           source: _scss/main.scss
-#           destination: /tmp/leviandemma/assets/css/main.css
-
-#       - name: Checkout destination Git branch
-#         uses: actions/checkout@v2
-#         with:
-#             ref: pr-pages
-#             fetch-depth: 1
-
-#       - name: Move compiled CSS to path within pr-pages branch
-#         run: mv /tmp/repo-name/assets/css assets/
-
-#       - name: Add and Commit changes to pr-pages branch
-#         run: |
-#           git config --local user.email 'action@github.com'
-#           git config --local user.name 'GitHub Action'
-#           git add assets/css/*
-#           git commit -m 'Updates compiled CSS files'
-
-#       - name: Push changes
-#         uses: ad-m/github-push-action@master
-#         with:
-#           github_token: ${{ secrets.GITHUB_TOKEN }}
-#           branch: pr-pages
-
-#       - name: Initialize Pull Request
-#         uses: gha-utilities/init-pull-request@v0.0.4
-#         with:
-#           pull_request_token: ${{ secrets.GITHUB_TOKEN }}
-#           head: pr-pages
-#           base: gh-pages
-#           title: 'Updates site files from latest Actions build'
-#           body: >
-#             Perhaps a multi-line description
-#             about latest features and such.
+          destination: styles/css/styles.css  # Output directly to your repo structure
+      
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: '.'  # Upload the entire repository including compiled CSS
+      
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
