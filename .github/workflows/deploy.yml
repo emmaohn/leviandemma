@@ -20,7 +20,7 @@ jobs:
         uses: gha-utilities/sass-build@v0.4.7
         with:
           source: styles/scss/styles.scss
-          destination: /tmp/repo-name/assets/styles/css/styles.css
+          destination: /tmp/leviandemma/assets/styles/css/styles.css
 
 # on:
 #   push:
