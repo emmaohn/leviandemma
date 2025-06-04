@@ -1,0 +1,14 @@
+on:
+  push: # Trigger the workflow when code is pushed
+    branches:
+      - main # Only trigger on pushes to the 'main' branch
+
+jobs: 
+  build:
+    runs-on: ubuntu-latest # Use Ubuntu for the runner environment
+    steps:
+      - name: Compile SCSS
+        uses: gha-utilities/sass-build@v0.4.7
+        with:
+          source: ./styles/scss/main.scss
+          destination: ./styles/css/main.scss
