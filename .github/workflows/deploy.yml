@@ -17,7 +17,7 @@ jobs:
         uses: gha-utilities/sass-build@v0.4.7
         with:
           source: styles/scss/styles.scss
-          destination: /styles/scss/styles.css
+          destination: styles/css/styles.css
 
 # on:
 #   push:
