@@ -10,5 +10,5 @@ jobs:
       - name: Compile SCSS
         uses: gha-utilities/sass-build@v0.4.7
         with:
-          source: styles/scss/styles.scss
-          destination: styles/css/styles.css
+          source: ../../styles/scss/styles.scss
+          destination: ../../styles/scss/styles.css
