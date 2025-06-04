@@ -19,6 +19,9 @@ jobs:
         with:
           ref: master
           fetch-depth: 0
+
+      - name: Create the directory
+        run: mdkir -vp styles/css
       
       - name: Compile SCSS
         uses: gha-utilities/sass-build@v0.4.7
