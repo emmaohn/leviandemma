@@ -13,11 +13,14 @@ jobs:
             ref: master
             fetch-depth: 10
 
+      - name: Make destination directory for compiled CSS
+        run: mkdir -vp /tmp/leviandemma/assets/styles/css
+
       - name: Compile SCSS
         uses: gha-utilities/sass-build@v0.4.7
         with:
           source: styles/scss/styles.scss
-          destination: styles/css/styles.css
+          destination: /tmp/repo-name/assets/styles/css/styles.css
 
 # on:
 #   push:
