@@ -1,3 +1,5 @@
+// codepen: https://codepen.io/studiojvla/pen/qVbQqW
+
 const slider = document.getElementById("slider")
 
 // shorthand lol

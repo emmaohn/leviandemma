@@ -3,7 +3,8 @@
 
 #navigation {
   display: flex;
-  justify-content: end;
+  flex-direction: column;
+  align-items: end;
   @include b.break(b.$sm) {
     display: inherit;
   }
@@ -35,6 +36,7 @@ nav {
 
   ul {
     display: flex;
+    align-items: flex-end;
     &.hideOnMobile {
       display: none;
       @include b.break(b.$sm) {
@@ -43,9 +45,9 @@ nav {
     }
     justify-content: space-around;
     flex-direction: column;
-    align-items: center;
     padding: 0;
     @include b.break(b.$sm) {
+      align-items: center;
       flex-direction: row;
     }
 
