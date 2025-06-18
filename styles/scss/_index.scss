@@ -1,3 +1,5 @@
+@use "breakpoints" as b;
+
 .info {
   line-height: .8em;
   h5 {
@@ -16,4 +18,8 @@
   margin-right: .75em;
   margin-top: .35em;
   margin-bottom: .25em;
+
+  @include b.break(b.$sm) {
+    margin-top: 0;
+  }
 }

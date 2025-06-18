@@ -1,6 +1,7 @@
 // codepen: https://codepen.io/studiojvla/pen/qVbQqW
 
 const slider = document.getElementById("slider")
+const imgCount = 18;
 
 // shorthand lol
 function createElement(element) {
@@ -11,12 +12,12 @@ let slideTrack = createElement("div")
 slideTrack.className = "slide-track"
 slider.appendChild(slideTrack)
 
-for (i = 1; i < 11; i++) {
+for (i = 0; i < imgCount * 2; i++) {
 	let div = createElement("div")
 	div.className="slide"
 
 	let img = createElement("img")
-	img.setAttribute('src', `images/img${i}.jpeg`)
+	img.setAttribute('src', `images/img${i % imgCount}.jpeg`)
 
 	div.appendChild(img)
 	slideTrack.appendChild(div)

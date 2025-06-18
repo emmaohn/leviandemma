@@ -1,28 +1,37 @@
-// codepen: https://codepen.io/studiojvla/pen/qVbQqW
-
 @use "breakpoints" as b;
 
+// Define variables for easier maintenance
+$photoCount: 18;       // The number of ORIGINAL photos
+$slideWidth: 250px;
+$animationDuration: 40s; 
+
 @mixin white-gradient {
-	background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+  background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
 }
 
-$animationSpeed: 40s;
-
-// Animation
+// --- MODIFIED KEYFRAMES ---
+// The animation now moves the track by the total width of the ORIGINAL set of slides.
 @keyframes scroll {
-	0% { transform: translateX(0); }
-	100% { transform: translateX(calc(-250px * 7))}
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    // This moves the slide track by the exact width of your original 18 images.
+    // At the end of the animation, the first "cloned" image will be in the
+    // exact starting position, creating a seamless loop.
+    transform: translateX(calc(-#{$slideWidth} * #{$photoCount}));
+  }
 }
 
 // Styling
 .slider {
-	background: white;
-	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
-	height: 250px;
-	overflow: hidden;
-	position: relative;
-	width: 100vw;
-	margin: 0 -1em;
+  background: white;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+  width: 100vw;
+  margin: 0 -1em;
   @include b.break(768px) {
     margin: 0 -2.6em;
   }
@@ -32,45 +41,48 @@ $animationSpeed: 40s;
   @include b.break(1280px) {
     margin: 0 -10em;
   }
-	
-	&::before,
-	&::after {
-		@include white-gradient;
-		content: "";
-		height: 250px;
-		position: absolute;
-		z-index: 2;
-		width: 100px;
-		@include b.break(640px) {
-			width: 150px;
-		}
-		@include b.break(768px) {
-			width: 200px;
-		}
-		@include b.break(1024px) {
-			width: 250px;
-		}
-	}
-	
-	&::after {
-		right: 0;
-		top: 0;
-		transform: rotateZ(180deg);
-	}
+  
+  &::before,
+  &::after {
+    @include white-gradient;
+    content: "";
+    height: 250px;
+    position: absolute;
+    z-index: 2;
+    width: 100px;
+    @include b.break(640px) {
+      width: 150px;
+    }
+    @include b.break(768px) {
+      width: 200px;
+    }
+    @include b.break(1024px) {
+      width: 250px;
+    }
+  }
+  
+  &::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+  }
 
-	&::before {
-		left: 0;
-		top: 0;
-	}
-	
-	.slide-track {
-		animation: scroll $animationSpeed linear infinite;
-		display: flex;
-		width: calc(250px * 18);
-	}
-	
-	.slide {
-		height: 250px;
-		width: 250px;
+  &::before {
+    left: 0;
+    top: 0;
+  }
+  
+  // --- MODIFIED SLIDE TRACK ---
+  .slide-track {
+    // The animation is applied as before, but the keyframes and width are different.
+    animation: scroll $animationDuration linear infinite;
+    display: flex;
+    // The width is now doubled to accommodate the original and cloned slides.
+    width: calc(#{$slideWidth} * #{$photoCount} * 2);
+  }
+  
+  .slide {
+    height: 250px;
+    width: $slideWidth;
   }
 }
