@@ -3,7 +3,7 @@
 // Define variables for easier maintenance
 $photoCount: 18;       // The number of ORIGINAL photos
 $slideWidth: 250px;
-$animationDuration: 40s; 
+$animationDuration: 75s; 
 
 @mixin white-gradient {
   background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);

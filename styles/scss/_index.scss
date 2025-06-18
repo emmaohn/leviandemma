@@ -3,7 +3,7 @@
 .info {
   line-height: .8em;
   h5 {
-    margin-top: 1.5em;
+    margin-top: 1em;
   }
   &-parent {
     margin-top: 1em;
@@ -16,10 +16,22 @@
 .homepage h1 {
   margin-left: .75em;
   margin-right: .75em;
-  margin-top: .35em;
-  margin-bottom: .25em;
+  margin-top: .15em;
+  margin-bottom: .2em;
 
   @include b.break(b.$sm) {
     margin-top: 0;
+  }
+}
+
+.small-text {
+  font-size: .7em;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  margin-bottom:  -1em;
+  margin-top: 1em;
+  @include b.break(b.$sm) {
+    margin-bottom:  -.1em;
+    margin-top:  -.5em;
   }
 }
