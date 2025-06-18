@@ -51,7 +51,7 @@
     } else {
       burger.textContent = '✕';
     }
-    ul.classList.toggle('hideOnMobile');
+    nav.classList.toggle('showOnMobile');
     navOpen = !navOpen;
   }
 

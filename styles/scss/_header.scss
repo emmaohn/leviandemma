@@ -1,26 +1,38 @@
 @use "vars" as v;
 @use "breakpoints" as b;
 
-#navigation {
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  @include b.break(b.$sm) {
-    display: inherit;
-  }
-  button {
-    margin-top: 10px;
-    padding: 8px 12px;
-    padding-top: 0;
-  }
-}
-
 nav {
-  > button {
-    display: block;
-    @include b.break(b.$sm) {
-      display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  z-index: 100;
+  padding: .5em;
+  text-align: right;
+
+  &.showOnMobile {
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+
+    // Only show the <ul> when the nav itself is shown.
+    > ul {
+      display: flex;
     }
+  }
+
+  // Desktop styles: always show, disregard .showOnMobile.
+  @include b.break(b.$sm) {
+    position: static;
+    height: auto;
+    width: auto;
+    background-color: transparent !important;
+    display: block;
+  }
+
+  > button {
+    // Hamburger button is visible on mobile.
+    display: inline-block;
     background: none;
     border: none;
     cursor: pointer;
@@ -28,25 +40,32 @@ nav {
     font-size: 1.75em;
     border-radius: 25px;
     transition: all .3s;
-    
+    margin-top: 10px;
+    padding: 8px 12px;
+    padding-top: 0;
+
     &:hover {
       background-color: v.$light-blue;
+    }
+
+    // Hamburger button is hidden on desktop.
+    @include b.break(b.$sm) {
+      display: none;
     }
   }
 
   ul {
-    display: flex;
-    align-items: flex-end;
-    &.hideOnMobile {
-      display: none;
-      @include b.break(b.$sm) {
-        display: flex;
-      }
-    }
-    justify-content: space-around;
+    // Hidden on mobile by default.
+    display: none;
+    // Mobile layout when shown.
     flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
     padding: 0;
+
     @include b.break(b.$sm) {
+      display: flex; // Ensure the <ul> is visible on desktop.
+      position: relative;
       align-items: center;
       flex-direction: row;
     }
