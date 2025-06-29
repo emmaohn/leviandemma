@@ -17,7 +17,7 @@ for (i = 0; i < imgCount * 2; i++) {
 	div.className="slide"
 
 	let img = createElement("img")
-	img.setAttribute('src', `images/img${i % imgCount}.jpeg`)
+	img.setAttribute('src', `images/img${i % imgCount}.webp`)
 
 	div.appendChild(img)
 	slideTrack.appendChild(div)
