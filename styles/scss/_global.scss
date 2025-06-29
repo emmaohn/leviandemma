@@ -9,10 +9,10 @@
 }
 
 html {
-  font-size: 17px;
+  font-size: 18px;
   color: v.$dark-text;
   @include b.break(b.$md) {
-    font-size: 18px;
+    font-size: 19px;
   }
 }
 
@@ -39,14 +39,19 @@ body, p, a {
   font-weight: 400;
 }
 
-h1, h2 {
+h1 {
   font-family: 'singlong', Verdana, Geneva, Tahoma, sans-serif;
   font-size: 2.8rem;
   margin-bottom: -.1em;
 }
+h2 {
+  font-family: 'singlong', Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 2.2rem;
+  margin-bottom: -.1em;
+}
 h3 {
   font-family: 'singlong', Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   margin-bottom: -.1em;
 }
 h4 {

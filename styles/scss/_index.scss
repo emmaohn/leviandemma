@@ -1,4 +1,5 @@
 @use "breakpoints" as b;
+@use "vars" as v;
 
 .info {
   line-height: .8em;
@@ -30,6 +31,38 @@
 
   @include b.break(b.$sm) {
     margin-top: 0;
+  }
+}
+
+.registry {
+  .small-text {
+    margin-top: .2em;
+  }
+
+  .small-text, h3 {
+    transition: all .2s;
+    margin: 0 30px;
+
+    @include b.break(b.$sm) {
+      margin: 0 100px;
+    }
+  }
+
+  .content {
+    margin-top: 2.5em;
+    margin-bottom: 3.5em;
+  }
+
+  a {
+    transition: all .3s;
+    color: v.$medium-blue;
+    padding: 3px 5px;
+    border-radius: 5px;
+
+    &:hover, &:active {
+      background-color: v.$light-blue;
+      color: v.$dark-text;
+    }
   }
 }
 
