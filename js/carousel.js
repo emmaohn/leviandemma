@@ -21,5 +21,4 @@ for (i = 0; i < imgCount * 2; i++) {
 
 	div.appendChild(img)
 	slideTrack.appendChild(div)
-	console.log(img)
 }

@@ -31,7 +31,7 @@ $animationDuration: 75s;
   overflow: hidden;
   position: relative;
   width: 100vw;
-  margin: 0 -1em;
+  margin: 2em -1em;
   @include b.break(768px) {
     margin: 0 -2.6em;
   }

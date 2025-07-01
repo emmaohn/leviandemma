@@ -2,35 +2,37 @@
 @use "vars" as v;
 
 .info {
-  line-height: .8em;
-  h5 {
-    margin-top: 1em;
-  }
-  &-parent {
-    margin-top: 1em;
-    h3:nth-of-type(2) {
-      margin-top: 1.2em;
-    }
-  }
+  margin-top: .75em;
+  line-height: 1.25em;
+  border-radius: 10px;
+  padding: .25em;
 
-  &-questions {
-    h5 {
-      margin-top: 2em;
-    }
-    h5:first-of-type {
-      margin-top: 2.5em;
-    }
+  p:nth-child(1) {
+    margin: .5em 0;
+  }
+  p:nth-child(2) {
+    margin: 0; 
   }
 }
 
 .homepage h1 {
   margin-left: .75em;
-  margin-right: .75em;
   margin-top: .15em;
-  margin-bottom: .2em;
+  margin-right: .75em;
+  line-height: 1.2em;
 
   @include b.break(b.$sm) {
     margin-top: 0;
+  }
+}
+
+.info-parent {
+  margin-top: 2.5rem;
+  margin-bottom: 2.25rem;
+
+  h2 {
+    padding-top: .75em;
+    line-height: .3em;
   }
 }
 
@@ -71,7 +73,6 @@
   letter-spacing: .35em;
   text-transform: uppercase;
   margin-bottom:  -1em;
-  margin-top: 1em;
   @include b.break(b.$sm) {
     margin-bottom:  -.1em;
     margin-top:  -.5em;

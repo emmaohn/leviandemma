@@ -9,7 +9,7 @@
   // nav start
   const nav = document.getElementById('navigation')
   const tabs = [
-    {link: '/', displayText: 'Home'},
+    {link: 'index.html', displayText: 'Home'},
     {link: 'rsvp.html', displayText: 'RSVP'},
     {link: 'questions.html', displayText: 'Questions'},
     {link: 'registry.html', displayText: 'Registry'},
