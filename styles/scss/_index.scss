@@ -47,12 +47,18 @@
     margin-top: .2em;
   }
 
-  .small-text, h3 {
+  .small-text, h6 {
     transition: all .2s;
     margin: 0 30px;
 
     @include b.break(b.$sm) {
       margin: 0 100px;
+    }
+  }
+
+  h6 {
+    @include b.break(v.$lg) {
+      display: none;
     }
   }
 

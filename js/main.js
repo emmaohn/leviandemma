@@ -60,8 +60,15 @@
 
   // footer
   const footer = document.querySelector('footer')
+  
   const h6 = createElement('h6')
-  h6.textContent = "Thank you for sharing this moment in our lives with us"
-  footer.classList.add('center');
+  h6.textContent = "Thank you for celebrating with us!"
+
+  const p = createElement('p')
+  p.textContent = "Love, Levi and Emma"
+  p.classList.add("small-text")
+
+  footer.classList.add("center")
   footer.appendChild(h6)
+  footer.appendChild(p)
 })();

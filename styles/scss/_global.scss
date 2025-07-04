@@ -25,16 +25,30 @@ body {
 }
 
 // Side margins
+$mainMargin: 2em;
+@mixin marginLeftRight($left, $right: 0) {
+  margin-left: $left;
+  margin-right: $left;
+
+  @if $right != 0 {
+    margin-right: $right;
+  }
+}
 main, header, footer {
-  margin: 0 1em;
-  @include b.break(768px) {
-    margin: 0 2.6em;
+  @include marginLeftRight(1em);
+  margin-bottom: $mainMargin;
+  
+  @include b.break(v.$md) {
+    @include marginLeftRight(2.6em);
+    margin-bottom: $mainMargin;
   }
-  @include b.break(1024px) {
-    margin: 0 5em;
+  @include b.break(v.$lg) {
+    @include marginLeftRight(5em);
+    margin-bottom: $mainMargin;
   }
-  @include b.break(1280px) {
-    margin: 0 10em;
+  @include b.break(v.$xl) {
+    @include marginLeftRight(10em);
+    margin-bottom: $mainMargin;
   }
 }
 

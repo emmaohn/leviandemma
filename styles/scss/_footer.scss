@@ -2,17 +2,28 @@
 @use "breakpoints" as b;
 
 footer {
-  a {
-    text-decoration: none;
-    transition: all .3s;
-    color: v.$medium-blue;
-    padding: 3px 5px;
-    margin: 10px 15px;
-    border-radius: 5px;
+  box-shadow: 0px 0px 0px 0px, 0px -2.5px 10px v.$special-blue;
+  position: sticky;
+  top: calc( 100vh - 100px );
+  width: 100%;
 
-    &:hover, &:active {
-      background-color: v.$light-blue;
-      color: v.$dark-text;
-    }
+  height: 170px;
+  @include b.break(425px) {
+    height: 130px;
+  }
+  @include b.break(v.$sm) {
+    height: 100px;
+  }
+  
+  padding: 1em 5em;
+  @include b.break(v.$lg) {
+    padding: 1em 10em;
+  }
+  @include b.break(v.$xl) {
+    padding: 1em 10em;
+  }
+
+  h6 {
+    margin-bottom: .5em;
   }
 }
