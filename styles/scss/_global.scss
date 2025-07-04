@@ -18,6 +18,10 @@ html {
 
 body {
   background-color: var(--light-background);
+  @include b.break(b.$sm) {
+    // To account for the header height
+    padding-top: 7em;
+  }
 }
 
 // Side margins

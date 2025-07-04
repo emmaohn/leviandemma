@@ -16,10 +16,6 @@
 }
 
 .homepage {
-  @include b.break(b.$sm) {
-    margin-top: 6.5em;
-  }
-
   h1 {
     margin-left: .75em;
     margin-top: .15em;
