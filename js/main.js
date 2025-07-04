@@ -60,20 +60,8 @@
 
   // footer
   const footer = document.querySelector('footer')
-  
   const h6 = createElement('h6')
   h6.textContent = "Thank you for sharing this moment in our lives with us"
-  
-  const linkDiv = createElement('div')
   footer.classList.add('center');
-  tabs.forEach((tab) => {
-    const a = createElement('a')
-    a.setAttribute('href', tab.link)
-    a.textContent = tab.displayText
-
-    linkDiv.appendChild(a)
-  })
-
   footer.appendChild(h6)
-  footer.appendChild(linkDiv)
 })();

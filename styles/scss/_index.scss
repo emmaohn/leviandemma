@@ -15,14 +15,21 @@
   }
 }
 
-.homepage h1 {
-  margin-left: .75em;
-  margin-top: .15em;
-  margin-right: .75em;
-  line-height: 1.2em;
-
+.homepage {
   @include b.break(b.$sm) {
-    margin-top: 0;
+    margin-top: 6.5em;
+  }
+
+  h1 {
+    margin-left: .75em;
+    margin-top: .15em;
+    margin-right: .75em;
+    line-height: 1.2em;
+
+    @include b.break(b.$sm) {
+      margin-top: 0;
+      margin-bottom: .5em;
+    }
   }
 }
 
@@ -33,6 +40,9 @@
   h2 {
     padding-top: .75em;
     line-height: .3em;
+    @include b.break(b.$sm) {
+      line-height: 1.25em;
+    }
   }
 }
 

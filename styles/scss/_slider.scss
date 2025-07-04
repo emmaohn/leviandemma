@@ -32,14 +32,14 @@ $animationDuration: 75s;
   position: relative;
   width: 100vw;
   margin: 2em -1em;
-  @include b.break(768px) {
-    margin: 0 -2.6em;
+  @include b.break(b.$sm) {
+    margin: 2em -2.6em;
   }
   @include b.break(1024px) {
-    margin: 0 -5em;
+    margin: 2em -5em;
   }
   @include b.break(1280px) {
-    margin: 0 -10em;
+    margin: 2em -10em;
   }
   
   &::before,
