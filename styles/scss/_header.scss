@@ -9,7 +9,7 @@ header {
 }
 
 nav {
-  box-shadow: -10px 15px 10px white;
+  box-shadow: none;
   position: fixed; // Make nav scroll with the user
   top: 0;
   right: 0;
@@ -30,6 +30,7 @@ nav {
 
   // Desktop styles: always show, disregard .showOnMobile.
   @include b.break(b.$sm) {
+    box-shadow: -10px 15px 10px white;
     position: fixed;
     height: auto;
     width: auto;
