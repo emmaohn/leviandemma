@@ -17,6 +17,7 @@ html {
 }
 
 body {
+  position: relative;
   background-color: var(--light-background);
   @include b.break(b.$sm) {
     // To account for the header height
