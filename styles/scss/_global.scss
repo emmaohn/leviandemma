@@ -100,3 +100,16 @@ img {
   text-align: center;
   margin: 0 auto;
 }
+
+.link-button {
+  padding: .9em;
+  background-color: v.$special-blue;
+  // color: white;
+  color: v.$dark-text;
+  border-radius: 15px;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
