@@ -13,6 +13,7 @@
     {link: 'rsvp.html', displayText: 'RSVP'},
     {link: 'questions.html', displayText: 'Questions'},
     {link: 'registry.html', displayText: 'Registry'},
+    {link: 'https://sydesweptphotographybooking.lightfolio.com/gallery/emma-jo-and-levi-wedding', displayText: 'Wedding Photos'}
   ]
 
   const ul = createElement('ul')

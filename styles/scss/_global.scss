@@ -52,6 +52,23 @@ main, header, footer {
     margin-bottom: $mainMargin;
   }
 }
+.slider {
+  @include marginLeftRight(1em);
+  margin-bottom: $mainMargin;
+  
+  @include b.break(v.$md) {
+    @include marginLeftRight(2.6em);
+    margin-bottom: $mainMargin;
+  }
+  @include b.break(v.$lg) {
+    @include marginLeftRight(5em);
+    margin-bottom: $mainMargin;
+  }
+  @include b.break(v.$xl) {
+    @include marginLeftRight(10em);
+    margin-bottom: $mainMargin;
+  }
+}
 
 body, p, a {
   font-family: 'Livvic', Georgia, 'Times New Roman', Times, serif;
